@@ -146,21 +146,3 @@ do
 done
 
 exit 0
-
-
-
-
-
-
-#ANZ=5
-#BACKUPFILE=$(date +%Y%m%d_%H%M%S_)Backup.tgz
-#BACKUPPATH="/root/home_backup/"
-#ZUSICHERN="/home/roesner/bin /home/linus/bin /etc/sysconfig"
-#HOMEBIN="/root/bin"
-#
-#tar cfz ${BACKUPPATH}${BACKUPFILE} $ZUSICHERN
-#
-#cd ${BACKUPPATH}
-#rm $(ls | head -n$(expr $(ls | wc -l) - $ANZ))
-#cd ${HOMEBIN}
-
