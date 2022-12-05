@@ -118,9 +118,25 @@ function what2Backup(){
 }
 
 function backuplist(){
+	backup2Show
+}
+
+function backup2Show(){
 	clear
-	echo "BACKUPLIST"
-	sleep 1
+	echo "   Backups auflisten"
+	echo
+	echo "      Von welchem Verzeichnis soll ein Backup angezeigt werden"
+	echo "      (Dateipfad wie z.B. /tmp)"
+	echo
+	read -p "      Eingabe: " BACKUPLIST
+	echo 
+	echo "      Ergebnis des find-Befehls:"
+	for I in $(find ${BACKUPLIST} -maxdepth 1 \( -name "*tgz" -o -name "*xz" -o -name "*bzip2" \))
+	do 
+		echo "      "$I
+	done	
+	echo
+	sleep 3
 }
 
 while :
@@ -140,7 +156,8 @@ do
 			backupdelete
 			;;
 		*)
-			echo "Und Tschüss"
+			echo
+			echo "      Und Tschüss"
 			exit
 	esac
 done
